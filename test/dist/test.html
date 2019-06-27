@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Font test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .page {
+      width: 940px;
+      padding: 30px 60px 100px;
+      font-size: 14px;
+      font-family: 'consolas';
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    h1 {
+      margin-left: -3px;
+      font-size: 40px;
+      line-height: 55px;
+    }
+
+    h2 {
+      padding: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 40px;
+    }
+
+    a {
+      color: #d30;
+    }
+
+    a:hover {
+      color: #f60;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    th,
+    td {
+      padding: 0 5px;
+      width: 16.66%;
+      text-align: left;
+      line-height: 30px;
+    }
+
+    th {
+      padding: 0 0 0 20px;
+      border-left: 2px solid #ddd;
+    }
+
+    p {
+      line-height: 20px;
+      padding: 2px 0;
+    }
+
+    code {
+      color: #069;
+      font-family: 'consolas';
+      border-radius: 3px;
+    }
+
+    ul {
+      margin: 0 auto;
+      list-style: none;
+    }
+
+    ul:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    li {
+      width: 10%;
+      padding: 5px 0 5px;
+      float: left;
+      cursor: pointer;
+    }
+
+    li i {
+      display: block;
+      font-size: 35px;
+      line-height: 50px;
+      text-align: center;
+      transition: all ease-out .3s;
+    }
+
+    li:hover i {
+      font-size: 45px;
+    }
+
+    li em,
+    li span {
+      display: block;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      font-style: normal;
+      transition: all ease-out .3s;
+    }
+
+    li span {
+      font-size: 12px;
+    }
+
+    li:hover em,
+    li:hover span {
+      color: #069;
+    }
+
+    pre {
+      margin-left: 3px;
+      padding: 5px 20px;
+      line-height: 24px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      border-left: 2px solid #ddd;
+    }
+  </style>
+  <style>
+  @font-face{
+  font-family:'test';
+  src:url(data:application/font-woff;charset=utf-8;base64,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) format("woff");
+}
+.abc,
+[class^="abc-"],
+[class*=" abc-"]
+{
+  font-family: 'test' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.abc-a:before {content:'\57344';}
+.abc-a_1:before {content:'\57345';}
+.abc-a_2:before {content:'\57346';}
+.abc-ellipse:before {content:'\57347';}
+.abc-i:before {content:'\57348';}
+.abc-s:before {content:'\57349';}
+.abc-ellipse_1:before {content:'\57350';}
+.abc-i_1:before {content:'\57351';}
+.abc-s_1:before {content:'\57352';}
+.abc-a_3:before {content:'\57353';}
+.abc-ellipse_2:before {content:'\57354';}
+.abc-i_2:before {content:'\57355';}
+.abc-s_2:before {content:'\57356';}
+.abc-ellipse_3:before {content:'\57357';}
+.abc-i_3:before {content:'\57358';}
+.abc-s_3:before {content:'\57359';}
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <h1>Font "test"</h1>
+  <p>Build by <a href="https://github.com/Z8264/iconfont-core" target="_blank">iconfont-core</a></p>
+  <h2>Information</h2>
+  <table>
+    <tr>
+      <th>Font Name：</th>
+      <td><code>test</code></td>
+      <th>Class Prefix：</th>
+      <td><code>abc</code></td>
+      <th>Icons Number：</th>
+      <td><code>16</code></td>
+    </tr>
+  </table>
+
+  <h2>Usage</h2>
+  <pre><code>&lt;i class=&quot;abc abc-[name]&quot;&gt;&lt;/i&gt;
+&lt;!-- or --&gt
+&lt;i class=&quot;abc-[name]&quot;&gt;&lt;/i&gt;</code></pre>
+
+  <h2>Icons</h2>
+  <ul>
+      
+      <li>
+          <i class="abc abc-a"></i>
+          <em>a</em>
+          <span>&xe000;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-a_1"></i>
+          <em>a_1</em>
+          <span>&xe001;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-a_2"></i>
+          <em>a_2</em>
+          <span>&xe002;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-ellipse"></i>
+          <em>ellipse</em>
+          <span>&xe003;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-i"></i>
+          <em>i</em>
+          <span>&xe004;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-s"></i>
+          <em>s</em>
+          <span>&xe005;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-ellipse_1"></i>
+          <em>ellipse_1</em>
+          <span>&xe006;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-i_1"></i>
+          <em>i_1</em>
+          <span>&xe007;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-s_1"></i>
+          <em>s_1</em>
+          <span>&xe008;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-a_3"></i>
+          <em>a_3</em>
+          <span>&xe009;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-ellipse_2"></i>
+          <em>ellipse_2</em>
+          <span>&xe00a;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-i_2"></i>
+          <em>i_2</em>
+          <span>&xe00b;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-s_2"></i>
+          <em>s_2</em>
+          <span>&xe00c;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-ellipse_3"></i>
+          <em>ellipse_3</em>
+          <span>&xe00d;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-i_3"></i>
+          <em>i_3</em>
+          <span>&xe00e;</span>
+      </li>
+      
+      <li>
+          <i class="abc abc-s_3"></i>
+          <em>s_3</em>
+          <span>&xe00f;</span>
+      </li>
+      
+  </ul>
+  <h2>CSS</h2>
+  <pre><code>@font-face{
+  font-family:'test';
+  src:url(data:application/font-woff;charset=utf-8;base64,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) format("woff");
+}
+.abc,
+[class^="abc-"],
+[class*=" abc-"]
+{
+  font-family: 'test' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.abc-a:before {content:'\57344';}
+.abc-a_1:before {content:'\57345';}
+.abc-a_2:before {content:'\57346';}
+.abc-ellipse:before {content:'\57347';}
+.abc-i:before {content:'\57348';}
+.abc-s:before {content:'\57349';}
+.abc-ellipse_1:before {content:'\57350';}
+.abc-i_1:before {content:'\57351';}
+.abc-s_1:before {content:'\57352';}
+.abc-a_3:before {content:'\57353';}
+.abc-ellipse_2:before {content:'\57354';}
+.abc-i_2:before {content:'\57355';}
+.abc-s_2:before {content:'\57356';}
+.abc-ellipse_3:before {content:'\57357';}
+.abc-i_3:before {content:'\57358';}
+.abc-s_3:before {content:'\57359';}</code></pre>
+
+</div>
+
+</body>

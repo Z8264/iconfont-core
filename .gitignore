@@ -1,0 +1,14 @@
+.git
+.vscode
+.DS_Store
+.sftp-config.json
+
+*~
+*.log
+*.diff
+*.patch
+*.swp
+*.tmp
+
+node_modules/
+coverage/

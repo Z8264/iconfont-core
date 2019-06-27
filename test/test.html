@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>testicon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #08c;
+        }
+    </style>
+    <link rel="stylesheet" href="dist/font.css">
+    <link rel="stylesheet" href="opensource/font.css">
+    <link rel="stylesheet" href="iconfont.cn/iconfont.css">
+    <link rel="stylesheet" href="icomoon.io/style.css">
+</head>
+
+<body>
+    <style>
+        p {
+            margin: 0 0 20px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .s24,
+        .s24 i {
+            font-size: 24px !important;
+            line-height: 30px !important;
+        }
+
+        .s50,
+        .s50 i {
+            font-size: 50px !important;
+            line-height: 70px !important;
+        }
+    </style>
+    <h2>排版测试</h2>
+
+    <p class="s24">&#x1f602;汉字<i class="before-a"></i>测试</p>
+    <p class="s24">&#x1f603;汉字<i class="test-a"></i>测试</p>
+    <p class="s24">&#x1f649;汉字<i class="font_family icon-a"></i>测试 [iconfont]</p>
+    <p class="s24">&#x1f640;汉字<i class="icomoon-a"></i>测试 [icomoon]</p>
+
+    <p class="s24">汉<i class="before-a"></i>字<i class="test-a"></i>测<i class="font_family icon-a"></i>试<i class="icomoon-a"></i></p>
+    <p class="s24">Eng<i class="before-s"></i>eng<i class="test-s"></i>lish<i class="font_family icon-s"></i>word<i
+            class="icomoon-s"></i></p>
+
+
+    <p class="s50">汉<i class="before-i"></i>字<i class="test-i"></i>测<i class="font_family icon-i"></i>试<i class="icomoon-i"></i></p>
+    <p class="s50">Eng<i class="before-i"></i>eng<i class="test-i"></i>lish<i class="font_family icon-i"></i>word<i
+            class="icomoon-i"></i></p>
+
+    <style>
+        .inl {
+            padding: 5px;
+            height: 82px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .inl:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+
+        .inl i {
+            display: inline-block;
+            font-size: 70px !important;
+            line-height: 70px !important;
+            border: 1px solid #ddd;
+        }
+    </style>
+
+    <h2>height测试</h2>
+    <section class="size">
+        <i class="before-s"></i>
+        <p>&#x1f602;before</p>
+    </section>
+    <section class="size">
+        <i class="test-s"></i>
+        <p>&#x1f603;now</p>
+    </section>
+
+    <h2>inline-block测试</h2>
+    <div class="inl">
+        <i class="before-a"></i>
+        <i class="test-a"></i>
+        <i class="font_family icon-a"></i>
+        <i class="icomoon-a"></i>
+    </div>
+
+    <div class="inl">
+        <i class="before-s"></i>
+        <i class="test-s"></i>
+        <i class="font_family icon-s"></i>
+        <i class="icomoon-s"></i>
+    </div>
+
+    <style>
+        section {
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .sec:after {
+            clear: both;
+            content: '';
+            display: table;
+        }
+
+        .sec i {
+            float: left;
+            margin-right: 1px;
+            display: block;
+            font-size: 70px;
+            line-height: 70px !important;
+            border: 1px solid #ddd;
+        }
+    </style>
+
+    <h2>float测试</h2>
+    <section class="sec">
+        <i class="before-a"></i>
+        <i class="test-a"></i>
+        <i class="font_family icon-a"></i>
+        <i class="icomoon-a"></i>
+    </section>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <section class="sec">
+        <i class="before-s"></i>
+        <i class="test-s"></i>
+        <i class="font_family icon-s"></i>
+        <i class="icomoon-s"></i>
+    </section>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaa</p>
+
+    <style>
+        .box {
+            float: left;
+        }
+
+        .size i {
+            font-size: 60px;
+            line-height: 70px;
+        }
+    </style>
+
+</body>
