@@ -4,7 +4,7 @@ module.exports = data => `
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Font ${data.fontName}</title>
+  <title>Font ${data.font.name}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     * {
@@ -136,24 +136,24 @@ module.exports = data => `
 <body>
 
 <div class="page">
-  <h1>Font "${data.fontName}"</h1>
+  <h1>Font "${data.font.name}"</h1>
   <p>Build by <a href="https://github.com/Z8264/iconfont-core" target="_blank">iconfont-core</a></p>
   <h2>Information</h2>
   <table>
     <tr>
       <th>Font Name：</th>
-      <td><code>${data.fontName}</code></td>
-      <th>Class Prefix：</th>
-      <td><code>${data.prefix}</code></td>
+      <td><code>${data.font.name}</code></td>
+      <th>Class font.prefix：</th>
+      <td><code>${data.font.prefix}</code></td>
       <th>Icons Number：</th>
       <td><code>${data.icons.length}</code></td>
     </tr>
   </table>
 
   <h2>Usage</h2>
-  <pre><code>&lt;i class=&quot;${data.prefix} ${data.prefix}-[name]&quot;&gt;&lt;/i&gt;
+  <pre><code>&lt;i class=&quot;${data.font.prefix} ${data.font.prefix}-[name]&quot;&gt;&lt;/i&gt;
 &lt;!-- or --&gt
-&lt;i class=&quot;${data.prefix}-[name]&quot;&gt;&lt;/i&gt;</code></pre>
+&lt;i class=&quot;${data.font.prefix}-[name]&quot;&gt;&lt;/i&gt;</code></pre>
 
   <h2>Icons</h2>
   <ul>
@@ -161,7 +161,7 @@ module.exports = data => `
     .map(
       icon => `
       <li>
-          <i class="${data.prefix} ${data.prefix}-${icon.name}"></i>
+          <i class="${data.font.prefix} ${data.font.prefix}-${icon.name}"></i>
           <em>${icon.name}</em>
           <span>&x${icon.hex.toString('16')};</span>
       </li>
