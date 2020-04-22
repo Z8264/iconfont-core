@@ -1,21 +1,19 @@
+
+
 const Sax = require('sax');
 const svgpath = require('svgpath');
 const shapeToPath = require('./shape2path');
 
-const STANDARD_WIDTH = 1024;
-const STANDARD_HEIGHT = 1024;
-const STANDARD_ROUND = 1;
+const {
+  STANDARD_WIDTH, STANDARD_HEIGHT, STANDARD_ROUND, FONT_DESCENT,
+} = require('./consts');
 
 /**
- * 标准化svg文件
- * -- 统一偏移量：0 0
- * -- 统一画布大小：1024*1024
- * -- 合并所有path路径
- * -- round = 1
+ * normalizeSVG
  * @param {Buffer || String} buffer
- * @return {String} d属性
+ * @return {String} d
  */
-module.exports = function normalize(buffer) {
+module.exports = function normalizeSVG(buffer) {
   const sax = Sax.createStream(true);
   const paths = [];
   let vb;
@@ -63,6 +61,10 @@ module.exports = function normalize(buffer) {
     d = svgpath(paths.join(' '))
       .translate(-x, -y)
       .scale(STANDARD_WIDTH / w, STANDARD_HEIGHT / h)
+
+      .matrix([1, 0, 0, -1, 0, 1024])
+      .translate(0, FONT_DESCENT)
+
       .rel()
       .round(STANDARD_ROUND)
       .toString();
