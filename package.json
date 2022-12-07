@@ -63,6 +63,6 @@
     "eslint-plugin-import": "^2.14.0",
     "husky": "^1.1.4",
     "jest": "^23.6.0",
-    "lint-staged": "^8.0.4"
+    "lint-staged": "^13.1.0"
   }
 }
